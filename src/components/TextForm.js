@@ -5,26 +5,28 @@ export default function TextForm(props) {
     const handleUpClick = ()=>{
         //console.log("Uppercase was clicked" + text);
         let newText = text.toUpperCase();
-        setText(newText)
+        setText(newText);
+        props.showAlert("Converted to uppercase!", "success");
     }
     const handleLoClick = ()=>{
         //console.log("Uppercase was clicked" + text);
         let newText = text.toLowerCase();
-        setText(newText)
+        setText(newText);
+        props.showAlert("Converted to lowercase!", "success");
     }
     const handleClClick = ()=>{
         let newText = '';
-        setText(newText)  
+        setText(newText);
+        props.showAlert("Text Cleared!", "success");
     }
     const handleCoClick = ()=>{
-        copy(text);
-        alert(
-            "Text copied!"
-        )
+        copy(text); 
+        props.showAlert("Copied to Clipboard!", "success");
     }
     const handleExtraSpaces = ()=>{
         let newText = text.split(/[ ]+/);
-        setText(newText.join(" "))
+        setText(newText.join(" "));
+        props.showAlert("Extra spaces removed!", "success");
     }
     const handleOnChange = (event)=>{
         //console.log("On Change");
